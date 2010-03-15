@@ -294,7 +294,7 @@ class Calculator < JFrame
 		when INPUT_MODE
 			input = display_string
 			if input.size > 0 && input != "0"
-				self.display_string = input.start_with?("-") ? input[1...input.size] : "-" + input
+				self.display_string = input.start_with?("-") ? input.delete('-') : "-" + input
 			end
 		when RESULT_MODE
 			display_result(-1 * number_in_display) if number_in_display != 0
